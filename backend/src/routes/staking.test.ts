@@ -32,7 +32,7 @@ describe('Staking API', () => {
     })
 
     it('should return 202 when staking is queued for retry', async () => {
-      // Mock the sender to fail once
+      // Mock the sender to fail once (queue for retry)
       const mockSender = await import('../outbox/sender.js')
       const originalSend = mockSender.OutboxSender.prototype.send
       const sendSpy = vi
